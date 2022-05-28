@@ -49,9 +49,9 @@ async def addchat(_, message):
     is_kuki = kuki.find_one({"chat_id": message.chat.id})
     if not is_kuki:
         kuki.insert_one({"chat_id": message.chat.id})
-        await message.reply_text(f"✅ | Successfully\nKuki Chatbot of this Group is set to @{message.chat.username}\n Requested by [{message.from_user.first_name}](tg://user?id={message.from_user.id})\n© @MetaVoid")
+        await message.reply_text(f"✅ | Successfully\nJarvis Chatbot of this Group is set to @{message.chat.username}\n Requested by [{message.from_user.first_name}](tg://user?id={message.from_user.id})\n© @SR2LINKS")
     else:
-        await message.reply_text(f"Already Setup Kuki Chatbot of this Group Is @{message.chat.username}")
+        await message.reply_text(f"Already Setup Jarvis Chatbot of this Group Is @{message.chat.username}")
 
 
 @bot.on_message(
@@ -72,10 +72,10 @@ async def rmchat(_, message):
             )
     is_kuki = kuki.find_one({"chat_id": message.chat.id})
     if not is_kuki:
-        await message.reply_text("Already Kuki ChatBot Disable")
+        await message.reply_text("Already Jarvis ChatBot Disable")
     else:
         kuki.delete_one({"chat_id": message.chat.id})
-        await message.reply_text("✅ | Kuki Chatbot is disable!")
+        await message.reply_text("✅ | Jarvis Chatbot is disable!")
 
 
 
@@ -177,16 +177,16 @@ async def start(client, message):
     if message.chat.type != "private":
         buttons = InlineKeyboardMarkup(
             [[InlineKeyboardButton(text="Click here",
-                url=f"t.me/kukichatbot?start")]])
+                url=f"t.me/jarvis_ai_xobot?start")]])
         await message.reply("Contact me in PM",
                             reply_markup=buttons)
         
     else:
-        buttons = [[InlineKeyboardButton("Support", url="https://t.me/metavoidsupport"),
-                    InlineKeyboardButton("Channel", url="https://t.me/metavoid"),
-                    InlineKeyboardButton("Repo", url="https://github.com/metavoidteam/kukichatbot")
+        buttons = [[InlineKeyboardButton("Support", url="https://t.me/Botz_Support"),
+                    InlineKeyboardButton("Channel", url="https://t.me/SR2LINKS"),
+                    InlineKeyboardButton("Dev", url="https://t.me/Redirecting_Platform")
                     ]]
-        Photo = "https://telegra.ph/file/b04509cc8486f23690bba.jpg"
+        Photo = "https://telegra.ph/file/e5be2890f08d5324f3812.jpj"
         await message.reply_photo(Photo, caption=f"Hello [{message.from_user.first_name}](tg://user?id={message.from_user.id}), Machine Learning Chat Bot that can talk about any topic in any language\n /help - Help Commands\n Powered By @MetaVoid", reply_markup=InlineKeyboardMarkup(buttons))
 
 
@@ -198,12 +198,12 @@ async def help(client, message):
     if message.chat.type != "private":
         buttons = InlineKeyboardMarkup(
             [[InlineKeyboardButton(text="Click here",
-                url=f"t.me/kukichatbot?start=help_")]])
+                url=f"t.me/jarvis_ai_xobot?start=help_")]])
         await message.reply("Contact me in PM",
                             reply_markup=buttons)
         
     else:    
-        await message.reply_text("/start - Start The Bot\n/chat - Send a message to this bot\n/setupchat - Active Kuki Chatbot In Group\n/removechat - Disable Kuki Chatbot In Group")
+        await message.reply_text("/start - Start The Bot\n/chat - Send a message to this bot\n/setupchat - Active Jarvis Chatbot In Group\n/removechat - Disable Jarvis Chatbot In Group")
 
 
 
